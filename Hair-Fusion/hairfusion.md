@@ -33,7 +33,10 @@
 
 ### Preprocess
 <p align="center">
-  <img src="images/ref1.png" width="300"/>
+  <img src="images/ref1.png" width="300" />
+</p>
+
+<p align="center">
   <img src="images/source2_agnoistic_crop.png" width="300"/>
   <img src="images/source2_agnoistic_mask_crop.png" width="300"/>
   <img src="images/source2_face_agnostic.png" width="300"/>
