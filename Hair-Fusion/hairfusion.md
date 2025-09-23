@@ -49,8 +49,8 @@
 </p>
 
 ### Result
-<img src="images/result2.png" width="300"/>
-<img src="images/result2_full.png" width="300"/>
+<img src="images/result2.png" />
+<img src="images/result2_full.png" />
 
 
 
