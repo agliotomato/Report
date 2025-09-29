@@ -2,4 +2,4 @@
 
 ### Stable-Hair
 <img src="images/result_full.png" />
-<img src="images/merged.png" />
+<img src="images/merged_SH.png" />
