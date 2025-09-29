@@ -1,5 +1,10 @@
 # Hair-Fusion 동작
 
+### 환경 어떻게 맞추었는지..
+뭔가 이슈가 많았다. 그 중 가장 큰 이슈는 CUDA 드라이버와 PyTorch 빌드 버전의 불일치였다
+"The detected CUDA version (12.6) mismatches PyTorch (11.7)” 경고/오류가 끊임없이 나왔다.
+그러니까 호스트 드라이버는 12.6인데 설치한 Torch는 cu117로 빌드됨
+
 ### 입력 이미지(source/ref)
 <p align="center">
   <img src="images/source.png" width="300"/>
@@ -19,7 +24,7 @@
 
 ### 입력 이미지(source/ref)
 <p align="center">
-  <img src="images/ref1.png" width="300"/>
+  <img src="images/ref1.png" width="300"/>ㅎ
   <img src="images/source.png" width="300"/>
 </p>
 
