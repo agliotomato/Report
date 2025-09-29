@@ -77,11 +77,11 @@ Densepose 돌릴 때 전용 Docker 이미지를 만들어서 사용함.
 
 requirements.txt
 docutils==0.16
-# https://github.com/sphinx-doc/sphinx/commit/7acd3ada3f38076af7b2b5c9f3b60bb9c2587a3d
+https://github.com/sphinx-doc/sphinx/commit/7acd3ada3f38076af7b2b5c9f3b60bb9c2587a3d
 sphinx==3.2.0
 recommonmark==0.6.0
 sphinx_rtd_theme
-# Dependencies here are only those required by import
+Dependencies here are only those required by import
 termcolor
 numpy
 tqdm
