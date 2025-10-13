@@ -27,7 +27,7 @@ VividHairStyler 입력 이미지 size : 1024*1024(png 파일)- 다른 사이즈�
 실행 시간 5분 내외
 
 
-### VividHairStyler 결과 이미지(Bald / Transfer)
+### HairFusion 결과 이미지(Bald / Transfer)
 <p align="center">
   <img src="images/00090_01.png" width="300"/>
   <img src="images/0000.png" width="300"/>
