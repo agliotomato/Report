@@ -17,6 +17,7 @@ cd HairFusion2/detectron2/projects/DensePose
 for img in ../../../data/taek_preprocessed/images/*.{jpg,jpeg,png}; do [ -e "$img" ] || continue; base=$(basename "${img%.*}"); outdir=../../../data/taek_preprocessed/images-densepose; mkdir -p "$outdir"; out="$outdir/$base.jpg"; tmp="${out%.jpg}.0001.jpg"; CUDA_VISIBLE_DEVICES=0 python apply_net.py show configs/densepose_rcnn_R_50_FPN_s1x.yaml https://dl.fbaipublicfiles.com/densepose/densepose_rcnn_R_50_FPN_s1x/165712039/model_final_162be9.pkl "$img" dp_contour --output "$out" -v; [ -f "$tmp" ] && mv "$tmp" "$out"; done
 
 
+
 3. Make Agnostic Images
 run:
 export dir_name=taek_preprocessed
