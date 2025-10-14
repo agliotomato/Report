@@ -21,8 +21,8 @@ VividHairStyler 입력 이미지 size : 1024*1024(png 파일)- 다른 사이즈�
 
 ### Stable-Hair 결과 이미지(Bald/Transfer)
 <p align="center">
+  <img src="images/bald_result_stable_hair.png" />
   <img src="images/transfer_result_stable_hair.png" width="300"/>
-  <img src="images/0000.png" width="300"/>
 </p>
 
 
