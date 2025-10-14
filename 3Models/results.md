@@ -38,3 +38,10 @@ VividHairStyler 입력 이미지 size : 1024*1024(png 파일)- 다른 사이즈�
 
 ### HAIR_FUSION
 <img src="images/CHHF4_fusion.png"/>
+
+### STABLE_HAIR
+<img src="images/CWHF5.jpg"/>
+
+### HAIR_FUSION
+<img src="images/CHWHF5_fusion.png"/>
+
