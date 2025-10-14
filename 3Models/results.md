@@ -88,6 +88,9 @@ VividHairStyler 입력 이미지 size : 1024*1024(png 파일)- 다른 사이즈�
 모델 입장에서는 얼마나 긴 머리를 어디까지 생성할 지에 대한 기하학적 기준이 사라짐.
 => 주어진 얼굴 윤곽에 너무 강하게 맞추어 머리가 짧아질 수도?
 
+얼굴 크기가 작은 걸 입력으로 넣는다면?
+
+
 (2) Latent Control Net 구조의 한계
 이 구조는 색상 일관성을 유지하기 위하여 latent 공간에서만 수항
 덕분에, 색상 전이는 그 어떤 모델보다 우수함
@@ -115,5 +118,13 @@ a single strand of bangs may not be captured due to mask failure (Fig.10).
 2. 색상 전이는 Stable-Hair가 훨씬 나음. 중간중간 색이 다른 것도 있고. 색이 조금 연해지는 현상 발생. 이것이 latent 공간 + Hair Extractor의 역할..(시간 좀 오래걸리긴 하심)
 
 3. hair mask가 DensePose + Parsing으로 나타남. 
-<img src="images/densepose.jpg"/>
+
+<p align="center">
+  <img src="images/densepose.jpg" width="300" />
+  <img src="images/a_01_densepose.jpg" width="300" />
+  <img src="images/b_01_densepose.jpg" width="300" />
+</p>
+
+
+
 이게 무슨 영향이 있을까... 더 찾아보기
