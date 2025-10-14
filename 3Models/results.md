@@ -90,6 +90,70 @@ VividHairStyler 입력 이미지 size : 1024*1024(png 파일)- 다른 사이즈�
 
 얼굴 크기가 작은 걸 입력으로 넣는다면?
 
+<img src="images/CWHF8.jpg"/>
+
+
+??? 뒤에 나온 저것들은.... 멀까
+H
+
+(1) Latent ControlNet의 근본적 trade-off
+논문에 따르면, Stable-Hair는 ControlNet의 pixel-space 대신 latent-space mapping을 사용하여 색상 일관성을 확보
+
+color 안정성은 없었지만 geometry control capability 떨어짐. latent 공간은 high-frequency spatial cue를 충분히 보존하지 못함.
+
+(2) 자동생성 데이터셋의 한계
+
+STABLE_HAIR 학습 데이터는 다음과 같이 만들어짐.
+
+STABLE_HAIR는 real-world dataset이 아니라 자동 생성 triplet dataset을 사용
+
+We propose an automated data generation pipeline …
+The pipeline uses ChatGPT to generate text prompts, the Stable Diffusion Inpainting model to generate reference images,
+and our pre-trained Bald Converter to convert the original image or one of the frames sampled from videos into the bald proxy image.”
+
+[1] 입력단계
+ - 원본 이미지에서 머리 부분을 segment 하여 hair mask 생성
+ - 얼굴 및 배경은 inpainting으로 덮어쓸 예정임
+
+[2] 텍스트 조건 생성 단계
+ - ChatGPT가 이미지의 "설명 문장"을 자동으로 만듬
+ - 이 문장은 inpainting 모델이 새 identity와 배경을 만들 때 사용
+
+[3] Inpainting 단계
+ - Stable Diffusion Inpainting 모델은
+       - ChatGPT 문장을 prompt로 받고.
+       - 머리카락 영역은 보호,
+       - 나머지 영역은 새로 그림
+    - 결과적으로 머리만 유지된 상태에서 다른 사람 처럼 보이는 reference 이미지 생성
+
+{x_original, x_bald, x_reference } triplet
+==> HairExtractor 와 Latent Identity IdentityNet 학습의 감독 데이터
+
+이렇게 생성된 synthetic triplet dataset을 사용
+최종적으로 150,000장의 triplet(by Stable Diffusion Inpainting 방식)
+원본 소스 -> FFHQ + CelebV-HQ
+
+FFHQ 논문에 따르면, FFHQ-CelebV-HQ는 본질적으로 머리 길이/형태 다양성이 적은 얼굴 중심 데이터셋임.
+머리 전체가 아니라 face-centored crop!!! -> shoulder-length 이하 중심
+
+따라서 Stable-Hair에서 학습 분포는 short ~ medium hair 중심으로 제한될 수 밖에 없음
+
+Inpainting 기반 
+Inpainting 기반은 기존 mask 범위 안에서만 채우는 local 연산 머리의 길이를 늘리는 형태이 판차는 적음
+
+논문에 따르면 ...
+Due to the limitation of training data, our method may inadvertently transfer certain hair accessories to the source image (as shown in Fig. 8),
+which may not be desirable in some scenarios.”
+
+=> 데이터 편향으로 인한 전이 한계를 의미. 길이 역시 제한을 받지 않을까???
+
+그래서 이런 결과가 나온거면 ㅇㅈ
+
+<img src="images/CWHF8.jpg"  />
+<img src="images/CWHF8_fusion.png" />
+<img src="images/CWHF9_fusion.png" />
+
+
 
 (2) Latent Control Net 구조의 한계
 이 구조는 색상 일관성을 유지하기 위하여 latent 공간에서만 수항
