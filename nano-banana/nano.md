@@ -34,4 +34,13 @@
 
 
 
+<p align="center">
+  <img src="images/1.png" width="300" />
+  <img src="images/0000_full.png" width="300"/>
+  <img src="images/transfer_result_stable_hair.png" width="300"/>
+  <img src="images/VividHairStyler_transfer.png" width="300"/>
+</p>
+
+nano/fusion/stable/vivid 순.
+
   
